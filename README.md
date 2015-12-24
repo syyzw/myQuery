@@ -21,4 +21,9 @@ and documentation.
 
 myQuery.js is licensed under the terms of the GPL License.
 
+## gulp用户
+请查看gulpfile.js中用到的node_modules自行配置
+
+## webpack用户
+
 

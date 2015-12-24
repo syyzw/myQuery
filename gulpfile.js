@@ -1,89 +1,58 @@
 var gulp = require("gulp");//gulp主对象
 var util = require("gulp-util");//gulp的工具对象
-var watch = require('gulp-watch');
 var notify = require("gulp-notify");
+var uglify = require("gulp-uglify");
+var rename = require("gulp-rename");
+var eslint = require('gulp-eslint');
+var sourcemaps = require('gulp-sourcemaps');
+var gls = require('gulp-live-server');
+
+ gulp.task('serve', function() {
+  //1. serve with default settings 
+  var server = gls.static('examples', 8888) //equals to gls.static('public', 3000); 
+  server.start();
+});
+
+gulp.task('compress', function() {
+  return gulp.src('src/*.js')
+  	.pipe(sourcemaps.init())
+	    .pipe(uglify())
+	    .on("error", notify.onError(function (error) {
+	        return "the step of uglify has some error: " + error.message;
+	      }))
+	    .pipe(rename(function(path){
+	    		path.basename += ".min"
+	    }))
+	    .on("error", notify.onError(function (error) {
+	        return "the step of rename has some error: " + error.message;
+	      }))
+	.pipe(sourcemaps.write('../maps'))
+    .pipe(gulp.dest('dist'))
+    .pipe(notify({
+        message : 'no bug,congratulations,you are doing a good job!!'
+    }));
+});
 
 
-gulp.task("default",function(){
-	util.log("gulp开始运行");
-	var a = 1;
-	var b = 2;
-	util.log(a+b);
-	var notify = require("gulp-notify");
-gulp.src("./src/index.js")
-  .pipe(notify("Hello Gulp!"));
-
-
-
-})
-// gulp.task("sass",function(){
-// 	gulp.src("sass/*.scss")
-// 		.pipe(sass())
-// 		.pipe(gulp.dest("css/"))
-// });
-
-// gulp.task("kaloa",function(){
-// 	watch("sass/*.scss",function(){
-// 		util.log("sass文件改变了");
-// 		gulp.start("sass");
-// 	})
-// })
-
-
-// gulp.task("sprite",function(){
-//   return gulp.src("./xuebi/css/style.css")
-//         .pipe(spriter({
-//         	sprite:"abc.png",//雪碧图名字
-//         	slice:"./xuebi/css/slice",//要压缩的图片
-//         	outpath:"./xuebi/debug-css/sprite"//雪碧图的输出的地址
-//         }))
-//         .pipe(gulp.dest("./xuebi/debug-css"));
-// })
-
-// gulp.task("autoprefixer",function(){
-// 	// return sass("scss/*.scss")
-// 			// .pipe(autoprefixer({
-// 			// 	browsers:["Android 4.1", "iOS 7.1", "Chrome > 31", "ff > 31", "ie >= 10"]
-// 			// }))
-// 	// 		.pipe(gulp.dest("css/"));
-// 	return gulp.src("sass/*.scss")
-// 		.pipe(sass())
-// 		.pipe(autoprefixer({
-// 				browsers:["Android 4.1", "iOS 5.1", "Chrome > 0", "ff > 0", "ie >= 0"]
-// 			}))
-// 		.pipe(gulp.dest("css/"))
-// })
-
+gulp.task('lint', function () {
+    // ESLint ignores files with "node_modules" paths. 
+    // So, it's best to have gulp ignore the directory as well. 
+    // Also, Be sure to return the stream from the task; 
+    // Otherwise, the task may end before the stream has finished. 
+    return gulp.src(['**/*.js','!node_modules/**'])
+        // eslint() attaches the lint output to the "eslint" property 
+        // of the file object so it can be used by other modules. 
+        .pipe(eslint())
+        // eslint.format() outputs the lint results to the console. 
+        // Alternatively use eslint.formatEach() (see Docs). 
+        .pipe(eslint.format())
+        // To have the process exit with an error code (1) on 
+        // lint error, return the stream and pipe to failAfterError last. 
+        .pipe(eslint.failAfterError());
+});
 
 
 
-// gulp.task("sprite1",function(){
-//   util.log("==============================");
-//   util.log("开始雪碧任务");
-//   return gulp.src("./xuebi/css/style.css")
-//         .pipe(spriter({
-//         	sprite:"abc.png",//雪碧图名字
-//         	slice:"./xuebi/css/slice",//要压缩的图片
-//         	outpath:"./xuebi/debug-css/sprite"//雪碧图的输出的地址
-//         }))
-//         .pipe(gulp.dest("./xuebi/debug-css"))
-// 	    .pipe(notify("雪碧图成功生成"));
-// })
-
-
-// gulp.task("htmlmin",function(){
-// 	return gulp.src("*.html")
-// 			.pipe(htmlmin({collapseWhitespace: true}))
-// 			.pipe(gulp.dest("min"))
-// 			.pipe(notify("报告，html完成压缩!!!!!!"));
-// })
-
-// gulp.task('ngTask', function () {
-//     return gulp.src('./ng/*.js')
-//         .pipe(ngAnnotate({
-//     remove: true,
-//     add: true,
-//     single_quotes: true
-// }))
-//         .pipe(gulp.dest('dist'));
-// });
+gulp.task( 'default', ['lint',"compress"], function(){
+	//blablabla
+});
