@@ -15,7 +15,7 @@ myquery is a JavaScript library for study or use in the little project,if you ar
 the API of myQuery is very simple,if you use the jQuery,you already know how to use myQuery.
 
 
-See [moyu-edu.com][] for an extended introduction, downloads
+See [myQuery](http://moyu-edu.github.io/myQuery/) for an extended introduction, downloads
 and documentation.
 
 myQuery.js is licensed under the terms of the GPL License.
