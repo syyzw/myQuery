@@ -1,0 +1,38 @@
+{
+  "name": "myquery",
+  "version": "1.0.0",
+  "description": "myquery is a JavaScript library for study or use in the little project,if you are dev the big project,please use the jQuery",
+  "main": "dist/myquery.js",
+  "directories": {
+    "doc": "doc",
+    "example": "examples"
+  },
+  "homepage": "http://moyu-edu.github.io/myQuery/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/moyu-edu/myQuery.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "javascript",
+    "library",
+    "dom",
+    "ajax",
+    "form"
+  ],
+  "author": "ericzheng",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp-eslint": "^1.1.1",
+    "gulp-jslint": "^0.2.2",
+    "gulp-live-server": "0.0.29",
+    "gulp-notify": "^2.2.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-uglify": "^1.5.1",
+    "gulp-util": "^3.0.7",
+    "map-stream": "0.0.6"
+  }
+}
