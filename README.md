@@ -1,5 +1,6 @@
 # myQuery.js – a minimalist and simple JavaScript library
 
+[![](https://img.shields.io/badge/myQuery-up--to--date-green.svg)](https://github.com/moyu-edu/myQuery/issues) [![](https://img.shields.io/badge/license-GPL3.0-green.svg)](https://github.com/moyu-edu/myQuery/blob/master/LICENSE)
 ```
      ___  ___  __    __  _____     _   _   _____   _____   __    __ 
     /   |/   | \ \  / / /  _  \   | | | | | ____| |  _  \  \ \  / / 
