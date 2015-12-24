@@ -7,9 +7,19 @@ var eslint = require('gulp-eslint');
 var sourcemaps = require('gulp-sourcemaps');
 var gls = require('gulp-live-server');
 
- gulp.task('serve', function() {
+
+//dev服务器环境
+gulp.task('dev', function() {
   //1. serve with default settings 
-  var server = gls.static('examples', 8888) //equals to gls.static('public', 3000); 
+  var server = gls.static(['examples',"node_modules/qunitjs/qunit/","src/"], 8888) //equals to gls.static('public', 3000); 
+  server.start();
+});
+
+
+//上线前服务器环境
+gulp.task('pub', function() {
+  //1. serve with default settings 
+  var server = gls.static(['examples',"node_modules/qunitjs/qunit/","dist/"], 8888) //equals to gls.static('public', 3000); 
   server.start();
 });
 
@@ -21,7 +31,7 @@ gulp.task('compress', function() {
 	        return "the step of uglify has some error: " + error.message;
 	      }))
 	    .pipe(rename(function(path){
-	    		path.basename += ".min"
+	    		path.basename = "myquery.min"
 	    }))
 	    .on("error", notify.onError(function (error) {
 	        return "the step of rename has some error: " + error.message;
