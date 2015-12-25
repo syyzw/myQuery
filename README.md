@@ -75,7 +75,7 @@ myQuery.js默认使用的工具是gulp,不过，您也可以使用webpack。
 
 ## 单元测试
 使用qunit进行测试，默认集成到了开发环境中，请参考demo使用在您的项目中
-
+![qunit](http://7xp6ta.com1.z0.glb.clouddn.com/qunit.png)
 ## 更多信息
 
 访问[myQuery官网](http://moyu-edu.github.io/myQuery/) 
