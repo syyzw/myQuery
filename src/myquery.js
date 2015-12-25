@@ -2,7 +2,7 @@
 * @Author: eric zheng
 * @Date:2015-12-25 10:22:45
 * @Last Modified by:eric zheng
-* @Last Modified time:2015-12-25 17:49:12
+* @Last Modified time:2015-12-25 18:52:23
 * @WebSite:moyu-edu.com
 * @Motto:stay foolish stay hungry
 */
@@ -50,6 +50,10 @@ myQuery.isNumber = function(){
 	return typeof arguments[0] === "number";
 }
 
+myQuery.isNumeric = function(){
+	return /^[0-9]+$/.test(arguments[0]);
+}
+
 myQuery.isString = function(){
 	return typeof arguments[0] === "string";
 }
@@ -59,16 +63,7 @@ myQuery.isBoolean = function(){
 }
 
 myQuery.isPrimitive = function(){
-	var ret = false;
-	if(myQuery.isNull( arguments[0] ) 
-		|| myQuery.isUndefined( arguments[0] ) 
-		|| myQuery.isNumber( arguments[0] ) 
-		|| myQuery.isString( arguments[0] ) 
-		|| myQuery.isBoolean( arguments[0] )
-	){
-		ret = true;
-	}
-	return ret;
+	return 'array|object|function'.indexOf(typeof arguments[0]) === -1;
 }
 
 myQuery.isArray = function(){
@@ -77,6 +72,7 @@ myQuery.isArray = function(){
 
 myQuery.isEmptyObject = function(){
 	var ret = true;
+	if(typeof arguments[0] != "object" || arguments[0] === null || Array.isArray(arguments[0]))ret = false;
 	for(var i in arguments[0]){
 		if(arguments[0])ret = false;
 		break;
@@ -85,43 +81,38 @@ myQuery.isEmptyObject = function(){
 }
 
 myQuery.isWindow = function(){
-	var ret = false;
-	if(arguments[0] && typeof arguments[0] === "object" && arguments[0].document){
-		ret = true;
-	}
-	return ret;
+	return arguments[0]!= null && arguments[0] === arguments[0].window;
 }
+
 /*==============================isXXX系列 end ==================================================*/
 
 /*==============================函数式API start ==================================================*/
-// myQuery.map = function(){
-// 	var ret = [];
-// 	if( arguments[0] == null || !/\[object Array\]|\[object Object\]/.test( arguments[0] ) ){
-// 		ret = [arguments[0]];
-// 	}
 
-// 	if( Array.isArray(arguments[0]) ){
-// 		if( arguments.length == 1 || !/\[object Function\]|\[object String\]/.test( arguments[1] )){
-// 			ret = arguments[0];
-// 		}else{
-// 			//todo
-// 		}
-// 	}else{
-// 		ret = [arguments[0]];
-// 	}
-
-
-
-// };
 /*==============================函数式API end ==================================================*/
 
 
+/*==============================正则 start ==================================================*/
+//手机、邮箱、是否是id，<div></div>的形式,<img>的形式、qq、网址、中国邮政编码 匹配身份证 ip  中文字符 
+
+/*==============================正则 end ==================================================*/
 
 
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+//svg,canvas,file Api
 
 
 
