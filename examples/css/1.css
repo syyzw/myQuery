@@ -1,0 +1,7 @@
+#div {
+  width: 100px;
+  height: 200px;
+  padding: 0;
+  -webkit-border-radius: 40px;
+     -moz-border-radius: 40px;
+          border-radius: 40px; }

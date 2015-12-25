@@ -13,7 +13,9 @@
 
 ## 什么是myQuery
 
-myQuery是第一款为中国前端开发者打造的前端开发集成套件，集成了sass、less、实时编译、ajax假数据可视化配置等，同时myQuery还基于jQuery的API实现了一个轻量级的query类库。
+myQuery是第一款专为中国前端开发者打造的前端开发集成套件，集成了sass、less、postcss、实时编译、ajax假数据可视化配置等，同时myQuery还基于jQuery的API实现了一个轻量级的query类库。考虑到大部分前端开发使用的是windows环境，经常会遇到C++编译问题，所有需要gyp编译的开源模块不会考虑加入。
+
+myQuery.js默认使用的工具是gulp,不过，您也可以使用webpack。
 
 ## 安装
 
@@ -65,6 +67,8 @@ myQuery是第一款为中国前端开发者打造的前端开发集成套件，�
 - `gulp devsass` 适合使用sass的用户
 - `gulp devless` 适合使用less的用户
 - `gulp` 上线版本执行的命令，会进行eslint检测并进行压缩代码，如果执行成功可以到dist文件夹中看到您的js压缩代码
+- `gulp postcss` 自动加前缀等
+
 
 ## ajax相关
 如果要fixture(mock,伪造)数据，请到这里生成[generate](generate.com)好，在examples文件中新建一个json.txt,把json数据放进去并保存，然后就可以在您的项目中用ajax请求这个假数据了。
