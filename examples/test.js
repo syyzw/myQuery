@@ -2,7 +2,7 @@
 * @Author: eric zheng
 * @Date:2015-12-25 00:57:33
 * @Last Modified by:eric zheng
-* @Last Modified time:2015-12-25 18:52:38
+* @Last Modified time:2015-12-25 19:15:49
 * @WebSite:moyu-edu.com
 * @Motto:stay foolish stay hungry
 */
@@ -92,4 +92,12 @@ QUnit.test("isEmptyObject",function(assert){
 	assert.ok($.isEmptyObject({}) === true,"Passed");
 	assert.ok($.isEmptyObject(function(){}) === false,"Passed");
 	assert.ok($.isEmptyObject(new Object) === true,"Passed");
+});
+
+QUnit.test("isWindow",function(assert){
+	assert.ok($.isWindow([]) === false,"Passed");
+	assert.ok($.isWindow(new Array()) === false,"Passed");
+	assert.ok($.isWindow('weewf') === false,"Passed");
+	assert.ok($.isWindow({}) === false,"Passed");
+	assert.ok($.isWindow(window) === true,"Passed");
 });

@@ -2,7 +2,7 @@
 * @Author: eric zheng
 * @Date:2015-12-25 10:22:45
 * @Last Modified by:eric zheng
-* @Last Modified time:2015-12-25 18:52:23
+* @Last Modified time:2015-12-25 19:28:37
 * @WebSite:moyu-edu.com
 * @Motto:stay foolish stay hungry
 */
@@ -86,14 +86,31 @@ myQuery.isWindow = function(){
 
 /*==============================isXXX系列 end ==================================================*/
 
+
+
 /*==============================函数式API start ==================================================*/
 
 /*==============================函数式API end ==================================================*/
 
 
 /*==============================正则 start ==================================================*/
-//手机、邮箱、是否是id，<div></div>的形式,<img>的形式、qq、网址、中国邮政编码 匹配身份证 ip  中文字符 
+var regPhone = /^(0[0-9]{2,3}\-)?([2-9][0-9]{6,7})+(\-[0-9]{1,4})?$/;
+var regMobile = /^0{0,1}(13[0-9]|15[0-9]|18[7-9]|14[0-9]|17[0-9])[0-9]{8}$/;
+var regEmail = /^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/;
+var regQQ = ;
+var regLink = ;
+var regZip = ;
+var regIdcard = ;
+var regIp = ;
+var regZW = ;
 
+myQuery.isMobile = function(str){
+	return regMobile.test(str);
+}
+
+myQuery.isPhone = function(str){
+	return regPhone.test(str);
+}
 /*==============================正则 end ==================================================*/
 
 
@@ -101,57 +118,10 @@ myQuery.isWindow = function(){
 
 
 
+/*==============================browser support start ==================================================*/
 
 
-
-
-
-
-
-
-
-
-
-//svg,canvas,file Api
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/*==============================browser support end ==================================================*/
 
 
 

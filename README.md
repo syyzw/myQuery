@@ -13,7 +13,7 @@
 
 ## 什么是myQuery
 
-myQuery是第一款专为中国前端开发者打造的前端开发集成套件，集成了sass、less、postcss、实时编译、ajax假数据可视化配置等，同时myQuery还基于jQuery的API实现了一个轻量级的query类库。考虑到大部分前端开发使用的是windows环境，经常会遇到C++编译问题，所有需要gyp编译的开源模块不会考虑加入。
+myQuery是第一款专为中国前端开发者打造的前端开发集成套件，集成了sass、less、postcss、font spider字蛛、实时编译等，同时myQuery还基于jQuery的API实现了一个轻量级的query类库。考虑到大部分前端开发使用的是windows环境，经常会遇到C++编译问题，所有需要gyp编译的开源模块不会考虑加入。
 
 myQuery.js默认使用的工具是gulp,不过，您也可以使用webpack。
 
@@ -76,11 +76,27 @@ myQuery.js默认使用的工具是gulp,不过，您也可以使用webpack。
 ## 单元测试
 使用qunit进行测试，默认集成到了开发环境中，请参考demo使用在您的项目中
 ![qunit](http://7xp6ta.com1.z0.glb.clouddn.com/qunit.png)
+
 ## 更多信息
 
 访问[myQuery官网](http://moyu-edu.github.io/myQuery/) 
 
+## 在线工具
+
+- [生成合适宽高的图片](http://rndimg.com/)
+- [生成假数据](http://generatedata.com)
+- [CSS3在线生成](http://www.zi-han.net/css3/)
+- [CSS3在线生成](http://www.css3maker.com/)
+- [CSS3在线生成](http://www.css88.com/tool/css3Preview/)
+- [在线正则测试](http://tool.oschina.net/regex)
+- [文字相关](http://tools.sharejs.com/csstype.html)
+- [CSS相关](http://linxz.github.io/tianyizone/)
+- [矢量小图标](http://iconfont.cn/)
+- [CSS3小图标](http://www.uiplayground.in/css3-icons/)
+- [AUI](http://www.auicss.com/)
+
 ## 授权
 
 myQuery.js 遵守GPL3.0协议
+
 
