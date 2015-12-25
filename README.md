@@ -1,4 +1,4 @@
-# myQuery.js – a minimalist and simple JavaScript library
+# myQuery.js – 大道至简，我用myQuery
 
 [![](https://img.shields.io/badge/myQuery-up--to--date-green.svg)](https://github.com/moyu-edu/myQuery/issues) [![](https://img.shields.io/badge/license-GPL3.0-green.svg)](https://github.com/moyu-edu/myQuery/blob/master/LICENSE)
 ```
@@ -11,22 +11,72 @@
 
 ```
 
+## 什么是myQuery
 
-myquery is a JavaScript library for study or use in the little project,if you are dev the big project,please use the jQuery.
-the API of myQuery is very simple,if you use the jQuery,you already know how to use myQuery.
+myQuery是第一款为中国前端开发者打造的前端开发集成套件，集成了sass、less、实时编译、ajax假数据可视化配置等，同时myQuery还基于jQuery的API实现了一个轻量级的query类库。
 
+## 安装
 
-See [myQuery](http://moyu-edu.github.io/myQuery/) for an extended introduction, downloads
-and documentation.
+### 确保您安装了npm
 
-myQuery.js is licensed under the terms of the GPL License.
+在cmd命令行中执行`npm -v`如果没有报错提示的是npm版本信息，则说明您已安装了npm,否则请到[nodejs官网](http://nodejs.org)。
 
-## gulp
-请查看gulpfile.js中用到的node_modules自行配置
+### 国内用户还需要配置taobao源
 
-## demo运行
-涉及到ajax相关的，请自行运行gulp serve
+```
+    npm install -g cnpm --registry=https://registry.npm.taobao.org
+```
+
+### 第一步
+
+#### npm方式
+
+```
+    npm install myquery  
+```
+
+#### git方式
+
+```
+    git clone https://github.com/moyu-edu/myQuery.git
+```
+
+#### 直接下载
+
+[点这里](https://github.com/moyu-edu/myQuery/zipball/master)
+
+### 第二步
+
+解压到工作目录中，执行
+```
+    cnpm install
+```
+
+### 第三步
+执行gulp dev，把您的html,js,css文件扔到examples文件夹下面，然后开始访问，地址格式如下:
+```
+    http://localhost/你的文件名
+```
+
+注意，如果您的端口80被占用了，有可能会出问题，请自行修改gulpfile.js里的端口配置，或到github上给作者提issue.
+
+## 常用命令
+- `gulp dev` 开发的时候访问
+- `gulp devsass` 适合使用sass的用户
+- `gulp devless` 适合使用less的用户
+- `gulp` 上线版本执行的命令，会进行eslint检测并进行压缩代码，如果执行成功可以到dist文件夹中看到您的js压缩代码
+
+## ajax相关
+如果要fixture(mock,伪造)数据，请到这里生成[generate](generate.com)好，在examples文件中新建一个json.txt,把json数据放进去并保存，然后就可以在您的项目中用ajax请求这个假数据了。
 
 ## 单元测试
-采用qunit
+使用qunit进行测试，默认集成到了开发环境中，请参考demo使用在您的项目中
+
+## 更多信息
+
+访问[myQuery官网](http://moyu-edu.github.io/myQuery/) 
+
+## 授权
+
+myQuery.js 遵守GPL3.0协议
 

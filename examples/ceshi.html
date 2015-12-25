@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src = "js/jquery-1.11.3.js"></script>
+</head>
+<body>
+<script>
+$(function(){
+	alert(1)
+	$.ajax({"url":"1.txt?"+Date.now()}).done(function(data){
+   		console.log(data);
+	});
+});
+</script>    
+</body>
+</html>

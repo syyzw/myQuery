@@ -1,6 +1,6 @@
 {
   "name": "myquery",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "myquery is a JavaScript library for study or use in the little project,if you are dev the big project,please use the jQuery",
   "main": "dist/myquery.js",
   "directories": {
@@ -35,5 +35,8 @@
     "gulp-util": "^3.0.7",
     "map-stream": "0.0.6",
     "qunitjs": "^1.20.0"
+  },
+  "dependencies": {
+    "express": "^4.13.3"
   }
 }

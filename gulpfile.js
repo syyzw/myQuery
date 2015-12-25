@@ -11,7 +11,7 @@ var gls = require('gulp-live-server');
 //dev服务器环境
 gulp.task('dev', function() {
   //1. serve with default settings 
-  var server = gls.static(['examples',"node_modules/qunitjs/qunit/","src/"], 8888) //equals to gls.static('public', 3000); 
+  var server = gls.static(['examples',"node_modules/qunitjs/qunit/","src/"], 80) //equals to gls.static('public', 3000); 
   server.start();
 });
 
@@ -19,7 +19,7 @@ gulp.task('dev', function() {
 //上线前服务器环境
 gulp.task('pub', function() {
   //1. serve with default settings 
-  var server = gls.static(['examples',"node_modules/qunitjs/qunit/","dist/"], 8888) //equals to gls.static('public', 3000); 
+  var server = gls.static(['examples',"node_modules/qunitjs/qunit/","dist/"], 80) //equals to gls.static('public', 3000); 
   server.start();
 });
 
