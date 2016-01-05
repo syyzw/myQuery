@@ -1,6 +1,6 @@
 {
   "name": "myquery",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "myquery is a JavaScript library for study or use in the little project,if you are dev the big project,please use the jQuery",
   "main": "dist/myquery.js",
   "directories": {
