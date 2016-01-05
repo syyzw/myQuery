@@ -93,7 +93,13 @@ myQuery.js默认使用的工具是gulp,不过，您也可以使用webpack。
 - [CSS相关](http://linxz.github.io/tianyizone/)
 - [矢量小图标](http://iconfont.cn/)
 - [CSS3小图标](http://www.uiplayground.in/css3-icons/)
+- [CSS3字](http://3d.yuxiaoxi.com/)
 - [AUI](http://www.auicss.com/)
+
+
+## [全世界是流行的js代码风格](http://jscs.info/)
+## 前端如何配置代理
+最简单办法是用fiddler2
 
 ## 授权
 

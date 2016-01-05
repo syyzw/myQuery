@@ -2,7 +2,7 @@
 * @Author: eric zheng
 * @Date:2015-12-25 10:22:45
 * @Last Modified by:eric zheng
-* @Last Modified time:2015-12-25 19:28:37
+* @Last Modified time:2015-12-25 23:58:43
 * @WebSite:moyu-edu.com
 * @Motto:stay foolish stay hungry
 */
@@ -26,6 +26,7 @@
 
 	}
 
+	myQuery.VERSION = 0.0.1;
 
 
 
@@ -86,8 +87,19 @@ myQuery.isWindow = function(){
 
 /*==============================isXXX系列 end ==================================================*/
 
+/*修复数组*/
+myQuery.arrayShuffle = function(){
 
+}
+myQuery.arrayFlatten = function(){
+	
+}
+myQuery.arrayUnique = function(){
+	
+}
+myQuery.lastDayOfThisMonth = function(){
 
+}
 /*==============================函数式API start ==================================================*/
 
 /*==============================函数式API end ==================================================*/
@@ -97,12 +109,12 @@ myQuery.isWindow = function(){
 var regPhone = /^(0[0-9]{2,3}\-)?([2-9][0-9]{6,7})+(\-[0-9]{1,4})?$/;
 var regMobile = /^0{0,1}(13[0-9]|15[0-9]|18[7-9]|14[0-9]|17[0-9])[0-9]{8}$/;
 var regEmail = /^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/;
-var regQQ = ;
-var regLink = ;
-var regZip = ;
-var regIdcard = ;
-var regIp = ;
-var regZW = ;
+// var regQQ = ;
+// var regLink = ;
+// var regZip = ;
+// var regIdcard = ;
+// var regIp = ;
+// var regZW = ;
 
 myQuery.isMobile = function(str){
 	return regMobile.test(str);
@@ -113,32 +125,73 @@ myQuery.isPhone = function(str){
 }
 /*==============================正则 end ==================================================*/
 
-
-
+myQuery.logError = function(){
+	
+}
 
 
 
 /*==============================browser support start ==================================================*/
 
+myQuery.isAndroid = function(){
 
+}
+
+myQuery.isIos = function(){
+
+}
+
+myQuery.isWeixin = function(){
+
+}
 /*==============================browser support end ==================================================*/
 
+myQuery.init = function(fn){
+	var readyState = 0;
+	global.addEventListener("DOMContentLoaded",function(){
+		if(readyState === 0){
+			readyState = 1;
+			(typeof fn === "function") && fn();
+			global.removeEventListener("DOMContentLoaded");
+			global.document.removeEventListener("load");
+		}
+		
+	},false);
+	global.document.addEventListener("load",function(){
+		if(readyState === 0){
+			readyState = 1;
+			(typeof fn === "function") && fn();
+			global.removeEventListener("DOMContentLoaded");
+			global.document.removeEventListener("load");
+		}
+	},false);
+}
+
+
+myQuery.makeArray = function(){
+
+
+}
 
 
 
+function mixin(object,target){}//组合
+//装饰者模式
+myQuery.extend = function(){
+
+}
 
 
 
-
-
-
-
-
-
-
-	
 	if ( typeof noGlobal === strundefined ) {
-		window.myQuery = window.$ = myQuery;
+		var _$ = global.$;
+		global.myQuery = global.$ = myQuery;
+		myQuery.noConflict = function(deep){
+			global.$ = _$;
+			if(deep)global.myQuery = _myQuery;
+			return myQuery;
+		}
+		
 	}
 	return myQuery;
 }));
