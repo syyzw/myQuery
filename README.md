@@ -15,6 +15,8 @@
 
 myQuery是第一款专为中国前端开发者打造的前端开发集成套件，集成了sass、less、postcss、font spider字蛛、实时编译等，同时myQuery还基于jQuery的API实现了一个轻量级的query类库。考虑到大部分前端开发使用的是windows环境，经常会遇到C++编译问题，所有需要gyp编译的开源模块不会考虑加入。
 
+myQuery由[墨鱼前端研发团队](http://moyu-edu.com/)，主要用于墨鱼前端学员学习之用，同时在一个小型前端项目里面完全可以做到整套工作流的进行，当然根据具体业务有可能需要进行一些配置的修改，不过prototype原型已经是可以使用了。
+
 myQuery.js默认使用的工具是gulp,不过，您也可以使用webpack。
 
 ## 安装
