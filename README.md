@@ -90,6 +90,3 @@ myQuery默认使用的工具是gulp,不过，您也可以使用webpack。
 ## 授权
 
 myQuery.js 遵守GPL3.0协议
-
-
-........
