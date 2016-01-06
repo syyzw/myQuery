@@ -74,7 +74,7 @@ myQuery默认使用的工具是gulp,不过，您也可以使用webpack。
 
 
 ## ajax相关
-如果要fixture(mock,伪造)数据，请到这里生成[generate](generate.com)好，在examples文件中新建一个json.txt,把json数据放进去并保存，然后就可以在您的项目中用ajax请求这个假数据了。
+如果要fixture(mock,伪造)数据，请到这里生成[generate](http://www.generatedata.com/)好[不明白为什么这么优秀的作品国内没多少人用，真的比那些mock.js好用多了]，在examples文件中新建一个json.txt,把json数据放进去并保存，然后就可以在您的项目中用ajax请求这个假数据了。
 
 ## 单元测试
 使用qunit进行测试，默认集成到了开发环境中，请参考demo使用在您的项目中
