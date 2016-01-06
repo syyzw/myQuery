@@ -1,7 +1,7 @@
 {
   "name": "myquery",
-  "version": "1.0.6",
-  "description": "myquery is a JavaScript library for study or use in the little project,if you are dev the big project,please use the jQuery",
+  "version": "1.0.7",
+  "description": "myquery is a JavaScript library for study or use in the little project,if you are dev the big project,please use the jQuery,and with bonous it give you a total of work flow tool suites.",
   "main": "dist/myquery.js",
   "directories": {
     "doc": "doc",
